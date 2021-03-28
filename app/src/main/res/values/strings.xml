@@ -1,3 +1,10 @@
 <resources>
     <string name="app_name">Taller 1</string>
+    <string name="inp_username">Usuario</string>
+    <string name="btn_forget_password">Olvidar Contraseña</string>
+    <string name="chk_remenber_data">Recordar mis datos</string>
+    <string name="chk_politicas">Términos y condiciones</string>
+    <string name="btn_login">Iniciar Sesión</string>
+    <string name="btn_sing_up">Registrarse</string>
+    <string name="password">Contraseña:</string>
 </resources>
