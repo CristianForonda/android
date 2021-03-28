@@ -7,4 +7,19 @@
     <string name="btn_login">Iniciar Sesión</string>
     <string name="btn_sing_up">Registrarse</string>
     <string name="password">Contraseña:</string>
+    <string name="register_names">Nombres:</string>
+    <string name="blank" />
+    <string name="register_last_name">Apellidos:</string>
+    <string name="register_email">Correo:</string>
+    <string name="register_username">Usuario:</string>
+    <string name="register_password">Contraseña</string>
+    <string name="register_comfirn_password">Vuelva a escribir la contraseña:</string>
+    <string name="register_sex">Sexo:</string>
+    <string name="back">Volver</string>
+    <string name="register_create">Crear usuario</string>
+
+    <string-array name="sp_sex">
+        <item>M</item>
+        <item>F</item>
+    </string-array>
 </resources>
