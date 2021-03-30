@@ -12,7 +12,7 @@
         android:layout_height="match_parent">
 
         <TextView
-            android:id="@+id/textView11"
+            android:id="@+id/textVieww11"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="100dp"
@@ -32,12 +32,12 @@
             android:text="HABIB NAVARRO"
             android:textColor="@color/green_normal"
             android:textSize="30sp"
-            app:layout_constraintBottom_toTopOf="@+id/textView9"
+            app:layout_constraintBottom_toTopOf="@+id/txt_v_1"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent" />
 
         <TextView
-            android:id="@+id/textView9"
+            android:id="@+id/txt_v_1"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:gravity="center"

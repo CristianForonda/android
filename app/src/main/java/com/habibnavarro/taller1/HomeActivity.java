@@ -7,13 +7,15 @@ import androidx.fragment.app.FragmentTransaction;
 
 import android.os.Bundle;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.Button;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
 public class HomeActivity extends AppCompatActivity {
     FirstFragment firstFragment = new FirstFragment();
     SecondFragment secondFragment = new SecondFragment();
-    ThirdFragment thirdFragment = new ThirdFragment();
+    FisicaFragment fisicaFragment = new FisicaFragment();
 
     BottomNavigationView navigation;
 
@@ -21,8 +23,8 @@ public class HomeActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home);
-        navigation = findViewById(R.id.bottom_navigation);
 
+        navigation = findViewById(R.id.bottom_navigation);
         navigation.getMenu().getItem(1).setChecked(true);
         loadFragment(secondFragment);
         navigation.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
@@ -36,7 +38,7 @@ public class HomeActivity extends AppCompatActivity {
                         loadFragment(secondFragment);
                         return true;
                     case R.id.thirdFragment:
-                        loadFragment(thirdFragment);
+                        onBackPressed();
                         return true;
                 }
                 return false;

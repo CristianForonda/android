@@ -36,7 +36,6 @@ public class MainActivity extends AppCompatActivity {
         users.add(new User("macuna", "contraseña", "Marlon", "Acuña", "macuna@gmail.com", "M"));
         users.add(new User("hnavarro", "contraseña", "Habib", "Navarro", "hnavarro@gmail.com", "M"));
 
-        Toast.makeText(getApplicationContext(), "asd",Toast.LENGTH_LONG).show();
         ck_remember = findViewById(R.id.ck_remember);
         ck_terms_and_conditions = findViewById(R.id.ck_terms_and_conditions);
         btn_submit = findViewById(R.id.btn_submit);
