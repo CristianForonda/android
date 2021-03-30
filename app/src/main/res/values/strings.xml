@@ -17,7 +17,13 @@
     <string name="register_sex">Sexo:</string>
     <string name="back">Volver</string>
     <string name="register_create">Crear usuario</string>
-
+    <string name="idfisica">Fisica</string>
+    <string name="idtexto">Texto</string>
+    <string name="idgeometria">Geometria</string>
+    <string name="idvelocidad">Velocidad</string>
+    <string name="idfuerza">Fuerza</string>
+    <string name="idvoltaje">Voltaje</string>
+    <string name="classvelocidad">este es la clase velocidad</string>
     <string-array name="sp_sex">
         <item>M</item>
         <item>F</item>
