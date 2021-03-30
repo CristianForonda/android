@@ -6,4 +6,33 @@
     android:layout_height="match_parent"
     tools:context=".HomeActivity">
 
+    <Button
+        android:id="@+id/idfisica"
+        android:layout_width="145dp"
+        android:layout_height="165dp"
+        android:layout_marginStart="28dp"
+        android:layout_marginTop="72dp"
+        android:text="@string/idfisica"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/idtexto"
+        android:layout_width="137dp"
+        android:layout_height="163dp"
+        android:layout_marginStart="48dp"
+        android:layout_marginTop="72dp"
+        android:text="@string/idtexto"
+        app:layout_constraintStart_toEndOf="@+id/idfisica"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/idgeometria"
+        android:layout_width="143dp"
+        android:layout_height="195dp"
+        android:layout_marginStart="28dp"
+        android:layout_marginTop="72dp"
+        android:text="@string/idgeometria"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/idfisica" />
 </androidx.constraintlayout.widget.ConstraintLayout>
