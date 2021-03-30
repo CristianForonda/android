@@ -10,6 +10,10 @@ import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import java.lang.reflect.Array;
+import java.util.ArrayList;
+import java.util.List;
+
 public class RegisterActivity extends AppCompatActivity {
     Spinner register_sex;
     TextView register_first_name;
@@ -68,7 +72,15 @@ public class RegisterActivity extends AppCompatActivity {
                     Toast.makeText(getApplicationContext(), "Las contraseñas no coinciden", Toast.LENGTH_LONG).show();
 
                 else {
+                    Toast.makeText(getApplicationContext(), "Usuario creado", Toast.LENGTH_LONG).show();
+                    List data = new ArrayList();
+                    data.add(first_name);
+                    data.add(last_name);
+                    data.add(email);
+                    data.add(username);
+                    data.add(password);
 
+                    onBackPressed();
                 }
             }
         });
