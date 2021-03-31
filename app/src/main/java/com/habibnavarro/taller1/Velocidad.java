@@ -17,8 +17,8 @@ public class Velocidad extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_velocidad);
 
-        distancia = findViewById(R.id.valor_distancia);
-        tiempo = findViewById(R.id.valor_tiempo);
+        distancia = findViewById(R.id.inp_v_1);
+        tiempo = findViewById(R.id.inp_v_2);
         velocidad = findViewById(R.id.valor_velocidad);
 
 

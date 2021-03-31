@@ -1,36 +1,54 @@
 package com.habibnavarro.taller1;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentTransaction;
 
-import android.content.Intent;
 import android.os.Bundle;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 
-public class HomeActivity extends AppCompatActivity implements View.OnClickListener{
+import com.google.android.material.bottomnavigation.BottomNavigationView;
 
-    Button fisica, geometria1;
+public class HomeActivity extends AppCompatActivity {
+    FirstFragment firstFragment = new FirstFragment();
+    SecondFragment secondFragment = new SecondFragment();
+    FisicaFragment fisicaFragment = new FisicaFragment();
+
+    BottomNavigationView navigation;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home);
 
-        fisica = findViewById(R.id.btn_fisica);
-        fisica.setOnClickListener(this);
-        geometria1 = findViewById(R.id.btn_geometria);
-        geometria1.setOnClickListener(this);
-
+        navigation = findViewById(R.id.bottom_navigation);
+        navigation.getMenu().getItem(1).setChecked(true);
+        loadFragment(secondFragment);
+        navigation.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
+            @Override
+            public boolean onNavigationItemSelected(@NonNull MenuItem item) {
+                switch (item.getItemId()) {
+                    case R.id.firstFragment:
+                        loadFragment(firstFragment);
+                        return true;
+                    case R.id.secondFragment:
+                        loadFragment(secondFragment);
+                        return true;
+                    case R.id.thirdFragment:
+                        onBackPressed();
+                        return true;
+                }
+                return false;
+            }
+        });
     }
 
-    @Override
-    public void onClick(View v) {
-        if (v.getId() == R.id.btn_fisica) {
-            Intent i = new Intent(getApplicationContext(), MainActivityFisica.class);
-            startActivity(i);
-        } else if (v.getId() == R.id.btn_geometria) {
-            Intent j = new Intent(getApplicationContext(), geometria.class);
-            startActivity(j);
-        }
+    private void loadFragment(Fragment fragment) {
+        FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
+        transaction.replace(R.id.frame_container, fragment);
+        transaction.commit();
     }
 }
