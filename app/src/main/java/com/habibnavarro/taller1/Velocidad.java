@@ -27,7 +27,7 @@ public class Velocidad extends AppCompatActivity {
         calcular.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                velocidad.setText((Double.parseDouble(distancia.getText().toString()) + Double.parseDouble(tiempo.getText().toString()))+"");
+                velocidad.setText((Double.parseDouble(distancia.getText().toString()) / Double.parseDouble(tiempo.getText().toString()))+"");
             }
         });
     }

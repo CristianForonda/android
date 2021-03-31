@@ -28,10 +28,12 @@ public class MainActivityFisica extends AppCompatActivity implements View.OnClic
         if (v.getId() == R.id.btn_velocidad){
             Intent i = new Intent(getApplicationContext(), Velocidad.class);
             startActivity(i);
-        }else if (v.getId() == R.id.btn_fuerza){
-            Intent i = new Intent(getApplicationContext(), Fuerza.class);
-            startActivity(i);
-        }else if (v.getId() == R.id.btn_voltaje){
+        }
+        if (v.getId() == R.id.btn_fuerza){
+            Intent j = new Intent(getApplicationContext(), Fuerza.class);
+            startActivity(j);
+        }
+        if (v.getId() == R.id.btn_voltaje){
             Intent i = new Intent(getApplicationContext(), Voltaje.class);
             startActivity(i);
         }
