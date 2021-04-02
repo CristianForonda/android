@@ -19,12 +19,9 @@ import java.util.List;
 
 public class MainActivity extends AppCompatActivity {
     List<User> users = new ArrayList<User>();
-    CheckBox ck_remember;
-    CheckBox ck_terms_and_conditions;
-    Button btn_submit;
-    Button btn_register;
-    TextView inp_username;
-    TextView inp_password;
+    CheckBox ck_remember, ck_terms_and_conditions;
+    Button btn_submit, btn_register, btn_olvidar_contrasena;
+    TextView inp_username, inp_password;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -40,6 +37,7 @@ public class MainActivity extends AppCompatActivity {
         ck_terms_and_conditions = findViewById(R.id.ck_terms_and_conditions);
         btn_submit = findViewById(R.id.btn_submit);
         btn_register = findViewById(R.id.btn_register);
+        btn_olvidar_contrasena = findViewById(R.id.btn_olvidar_contrasena);
         inp_username = findViewById(R.id.inp_username);
         inp_password = findViewById(R.id.inp_password);
 
@@ -72,6 +70,12 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
+        btn_olvidar_contrasena.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(MainActivity.this, OlvidarContrasenaActivity.class));
+            }
+        });
         btn_register.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

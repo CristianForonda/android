@@ -9,7 +9,10 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.Taller1">
-        <activity android:name=".geometria"></activity>
+        <activity android:name=".RecuperarPassActivity"></activity>
+        <activity android:name=".RecuperarContrasenaActivity"></activity>
+        <activity android:name=".OlvidarContrasenaActivity" />
+        <activity android:name=".geometria" />
         <activity android:name=".Voltaje" />
         <activity android:name=".Fuerza" />
         <activity android:name=".Velocidad" />

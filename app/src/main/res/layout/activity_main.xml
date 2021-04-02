@@ -42,7 +42,7 @@
         app:layout_constraintTop_toBottomOf="@+id/ck_terms_and_conditions" />
 
     <Button
-        android:id="@+id/button2"
+        android:id="@+id/btn_olvidar_contrasena"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:background="#00EAE2E2"
@@ -61,7 +61,7 @@
         android:text="@string/chk_remenber_data"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/button2" />
+        app:layout_constraintTop_toBottomOf="@+id/btn_olvidar_contrasena" />
 
     <CheckBox
         android:id="@+id/ck_terms_and_conditions"
