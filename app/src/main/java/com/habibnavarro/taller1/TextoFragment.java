@@ -1,5 +1,7 @@
 package com.habibnavarro.taller1;
 
+import android.graphics.Paint;
+import android.graphics.Typeface;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
@@ -7,6 +9,9 @@ import androidx.fragment.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
+import android.widget.TextView;
+import android.widget.Toast;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -23,6 +28,9 @@ public class TextoFragment extends Fragment {
     // TODO: Rename and change types of parameters
     private String mParam1;
     private String mParam2;
+    Button btn_negrita, btn_italica, btnrayado;
+    TextView txt, mensajeEditText;
+    boolean negrita = false, italica = false, rayado = false;
 
     public TextoFragment() {
         // Required empty public constructor
@@ -59,6 +67,53 @@ public class TextoFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_texto, container, false);
+        View view = inflater.inflate(R.layout.fragment_texto, container, false);
+
+        txt = view.findViewById(R.id.txt);
+        mensajeEditText = view.findViewById(R.id.mensajeEditText);
+        btn_negrita = view.findViewById(R.id.btn_negrita);
+        btn_italica = view.findViewById(R.id.btn_italica);
+        btnrayado = view.findViewById(R.id.btnrayado);
+
+        btn_negrita.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                negrita = !negrita;
+                setMensajeEditText();
+            }
+        });
+        btn_italica.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                italica = !italica;
+                setMensajeEditText();
+            }
+        });
+        btnrayado.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                rayado = !rayado;
+                setMensajeEditText();
+            }
+        });
+        return view;
     }
+
+    private void setMensajeEditText () {
+        if (rayado)
+            txt.setPaintFlags(txt.getPaintFlags() | Paint.UNDERLINE_TEXT_FLAG);
+        else
+            txt.setPaintFlags(0);
+
+        if (negrita && italica)
+            txt.setTypeface(null, Typeface.BOLD_ITALIC);
+        else if (negrita)
+            txt.setTypeface(null, Typeface.BOLD);
+        else if (italica)
+            txt.setTypeface(null, Typeface.ITALIC);
+
+        txt.setText(mensajeEditText.getText().toString());
+    }
+
+    public void onClick() { }
 }
