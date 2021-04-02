@@ -25,6 +25,7 @@ public class FisicaFragment extends Fragment {
     // TODO: Rename and change types of parameters
     private String mParam1;
     private String mParam2;
+    private String function;
 
     View view;
     Button btn_cal_velocidad, btn_speed, btn_power, btn_voltaje1;
@@ -81,6 +82,7 @@ public class FisicaFragment extends Fragment {
         btn_speed.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                function = "velocidad";
                 txt_title.setText("Calcular velocidad");
                 txt_v_1.setText("Ingrese la distancia:");
                 txt_v_2.setText("Ingrese el tiempo:");
@@ -89,6 +91,7 @@ public class FisicaFragment extends Fragment {
         btn_power.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                function = "fuerza";
                 txt_title.setText("Calcular fuerza");
                 txt_v_1.setText("Ingrese la masa:");
                 txt_v_2.setText("Ingrese la aceleración:");
@@ -108,7 +111,14 @@ public class FisicaFragment extends Fragment {
                 if (inp_v_1.getText().toString().length() == 0 || inp_v_2.getText().toString().length() == 0)
                     Toast.makeText(getContext(), "Campo incompleto", Toast.LENGTH_SHORT).show();
                 else
-                    txt_res.setText("Resultado: " + (Double.parseDouble(inp_v_1.getText().toString()) * Double.parseDouble(inp_v_2.getText().toString())));
+                    switch (function) {
+                        case "velocidad":
+                            txt_res.setText("Resultado: " + (Double.parseDouble(inp_v_1.getText().toString()) / Double.parseDouble(inp_v_2.getText().toString())));
+                            break;
+                        case "fuerza":
+                            txt_res.setText("Resultado: " + (Double.parseDouble(inp_v_1.getText().toString()) * Double.parseDouble(inp_v_2.getText().toString())));
+                            break;
+                    }
             }
         });
 
